@@ -4,6 +4,7 @@ import axios from 'axios';
 import { WiDayCloudy } from 'react-icons/wi'; // Replace this with the appropriate weather icons
 import { FaAddressCard, FaBirthdayCake, FaMoneyBillWave } from 'react-icons/fa';
 import Modal from '~/components/partials/Modal';
+import { MdCall } from 'react-icons/md';
 
 const Service = () => {
   const [showNid, setShowNid] = useState(false);
@@ -51,6 +52,50 @@ const Service = () => {
             >
               <FaMoneyBillWave className="mr-2" />
               ভাতা পেতে আবেদন করুন
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setShowNid3(true);
+              }}
+              className="my-3 flex items-center rounded-full bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700"
+            >
+              <MdCall className="mr-2" />
+              সরকারী তথ্য জানতে কল করুনঃ 333
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setShowNid3(true);
+              }}
+              className="my-3 flex items-center rounded-full bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700"
+            >
+              <MdCall className="mr-2" />
+              ইমার্জেন্সী সেবা পেতে কল করুনঃ 999
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setShowNid3(true);
+              }}
+              className="my-3 flex items-center rounded-full bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700"
+            >
+              <MdCall className="mr-2" />
+              দূর্যোগ ব্যাবস্থাপনায় সহায়তা পেতে কল করুনঃ 1090
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setShowNid3(true);
+              }}
+              className="my-3 flex items-center rounded-full bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700"
+            >
+              <MdCall className="mr-2" />
+              ফায়ার সার্ভিস এ কল করুনঃ 16163
             </button>
           </div>
         </div>

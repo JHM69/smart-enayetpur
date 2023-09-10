@@ -127,14 +127,14 @@ export const categories = [
   { title: 'শিক্ষা', url: `/browse/course` },
   { title: 'স্বাস্থ্য সেবা', url: `/health` },
   { title: 'যানবাহন', url: `/trans` },
-  { title: 'দুর্যোগ সতর্কতা', url: `/trans` },
+  { title: 'দুর্যোগ সতর্কতা', url: `/digester` },
   { title: 'সরকারি সেবা', url: `/gov_service` },
-  { title: 'পরিবেশ বার্তা', url: `/trans` },
-  { title: 'গ্রামীণ উদ্যোগ ও অর্থনীতি', url: `/trans` },
+  { title: 'পরিবেশ বার্তা', url: `/env` },
+  { title: 'গ্রামীণ উদ্যোগ ও অর্থনীতি', url: `/economy` },
   { title: 'গ্রামীণ সম্প্রদায়', url: `/social_media` },
-  { title: 'প্রয়োজনীয় সেবা', url: `/trans` },
-  { title: 'দক্ষতা ও কর্ম', url: `/trans` },
-  { title: 'সাংস্কৃতিক সংরক্ষণ', url: `/trans` },
+  { title: 'প্রয়োজনীয় সেবা', url: `/utility` },
+  { title: 'দক্ষতা ও কর্ম', url: `/browse/course` },
+  { title: 'সাংস্কৃতিক সংরক্ষণ', url: `/culture` },
 ];
 
 export const swiperBreakPoints = {

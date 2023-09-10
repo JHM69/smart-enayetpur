@@ -194,14 +194,14 @@ const Home: NextPage<HomePageProps> = ({
         </div>
       </Container>
 
-      <Achievement
+      {/* <Achievement
         totalCourses={12}
         totalTests={12}
         totalQuestions={21}
         totalStudents={1233423}
         totalBooks={22}
         totalArticles={3}
-      />
+      /> */}
 
       {/* <Banner /> */}
     </>
