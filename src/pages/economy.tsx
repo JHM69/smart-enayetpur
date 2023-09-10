@@ -231,20 +231,6 @@ const Eco = () => {
                 আবেদন করুণ <span className="ml-1 text-xs">&#8594;</span>
               </a>
             </div>
-
-            <div className="mb-4 rounded-lg bg-gray-200 p-4 shadow-lg">
-              <h4 className="text-lg font-semibold">গ্রামীণ বিদ্যুৎ ঋণ</h4>
-              <p>
-                গ্রামীণ এলাকাগুলিতে বিদ্যুৎ সরবরাহের জন্য ঋণ প্রদান করে আমরা
-                গ্রামীণ বিদ্যুৎ সেবা উন্নত করতে সাহায্য করি।
-              </p>
-              <a
-                href="course-page-1.html"
-                className="text-blue-500 hover:underline"
-              >
-                আবেদন করুণ <span className="ml-1 text-xs">&#8594;</span>
-              </a>
-            </div>
           </div>
         </div>
       </section>
@@ -257,7 +243,7 @@ const Eco = () => {
             আমাদের কুটির শিল্প বাজারে আপনি স্থানীয় কারিগরদের সাথে যোগাযোগ করতে
             পারেন এবং তাদের প্রোডাক্ট কিনতে পারেন।
           </p>
-          <a href="/market" className="text-blue-500 hover:underline">
+          <a href="/kutir" className="text-blue-500 hover:underline">
             আমাদের কুটির শিল্প বাজার ঘুরে আসুন{' '}
             <span className="ml-1 text-xs">&#8594;</span>
           </a>

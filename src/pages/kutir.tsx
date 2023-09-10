@@ -1,69 +1,69 @@
-// components/Weather.js
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { WiDayCloudy } from 'react-icons/wi'; // Replace this with the appropriate weather icons
-import { FaAddressCard, FaBirthdayCake, FaMoneyBillWave } from 'react-icons/fa';
-import Modal from '~/components/partials/Modal';
-import { MdCall } from 'react-icons/md';
-
-const Service = () => {
+const Kutir = () => {
   return (
-    <div className="flex flex-wrap justify-between">
-      <div className="w-full p-4 md:w-1/3">
-        <div className="solution-box flex h-full flex-col rounded-lg bg-white p-6 shadow-lg">
-          <div>
-            <img
-              src="https://www.uddoktarkhoje.com/wp-content/uploads/2018/12/341209_150-e1545287764805.jpg"
-              alt="water"
-              className="mx-auto h-64 w-full"
-            />
-          </div>
-          <h3 className="m-2 text-xl font-bold">কম্পিউটার প্রশিক্ষণ</h3>
-          <p className="flex-grow text-base text-gray-700">
-            উন্নয়ন ও তথ্য যোগাযোগ প্রযুক্তির উন্নতির সাথে তাল রেখে চলতে গিয়ে
-            বর্তমানে কম্পিউটার শিক্ষার গুরুত্ব অপরিহার্য হয়ে পড়েছে। এজন্য,
-            শিক্ষিত যুব সমাজের ছেলে মেয়েরা স্কুল, কলেজ এবং বিশ্ববিদ্যালয়ে
-            পড়াশোনা চলাকালীন সময়েই বিভিন্ন কম্পিউটার প্রশিক্ষণ কোর্সে ভর্তি হয়ে,
-            উক্ত খাতে তাদের দক্ষতাকে সমৃদ্ধ করছে।
-          </p>
+    <div className="container mx-auto">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="rounded-lg bg-white p-4 shadow-lg">
+          <img
+            src="https://images.prothomalo.com/prothomalo%2Fimport%2Fmedia%2F2016%2F04%2F11%2Ff5266be4660678c1e09601805f9c9a99-12.jpg?auto=format%2Ccompress&w=376&dpr=2.6"
+            alt="Product 1"
+            className="mb-2 rounded-lg"
+            width="300"
+            height="200"
+          />
+          <h3 className="mb-2 text-lg font-semibold">মৃৎশিল্প</h3>
+          <p>মাটির হাড়ি-পাতিল বা জিনিসপত্র তৈরি।</p>
+          <a href="#" className="text-blue-500 hover:underline">
+            বিস্তারিত দেখুন
+          </a>
         </div>
-      </div>
 
-      <div className="w-full p-4 md:w-1/3">
-        <div className="solution-box flex h-full flex-col rounded-lg bg-white p-6 shadow-lg">
-          <div>
-            <img
-              src="https://bd24report.com/bangla/wp-content/uploads/2019/10/27-5.jpg"
-              alt="sewing"
-              className="mx-auto h-64 w-full"
-            />
-          </div>
-          <h3 className="m-2 text-xl font-bold">সেলাই মেশিন প্রশিক্ষণ</h3>
-          <p className="flex-grow text-base text-gray-700">
-            আমরা সেলাই মেশিন প্রশিক্ষণ সেবা সরবরাহ করি যা আপনাকে সেলাই মেশিন
-            পেশায় উন্নত করতে সাহায্য করতে সক্ষম করে।
-          </p>
+        <div className="rounded-lg bg-white p-4 shadow-lg">
+          <img
+            src="https://www.u71news.com/article_images/2015/04/09/09-04-2015NP2.jpg"
+            alt="Product 2"
+            className="mb-2 rounded-lg"
+            width="300"
+            height="200"
+          />
+          <h3 className="mb-2 text-lg font-semibold">কাঠ শিল্প</h3>
+          <p>কাঠের মিস্ত্রির আসবাবপত্র তৈরি গৃহ নির্মাণ ইত্যাদি।</p>
+          <a href="#" className="text-blue-500 hover:underline">
+            বিস্তারিত দেখুন
+          </a>
         </div>
-      </div>
 
-      <div className="w-full p-4 md:w-1/3">
-        <div className="solution-box flex h-full flex-col rounded-lg bg-white p-6 shadow-lg">
-          <div>
-            <img
-              src="https://www.kalerkantho.com/_next/image?url=http%3A%2F%2Fcdn.kalerkantho.com%2Fpublic%2Fnews_images%2F2021%2F01%2F13%2F171626agriculture-krisi.jpg&w=1920&q=100"
-              alt="agriculture"
-              className="mx-auto h-64 w-full"
-            />
-          </div>
-          <h3 className="m-2 text-xl font-bold">কৃষি প্রশিক্ষণ</h3>
-          <p className="flex-grow text-base text-gray-700">
-            আমরা কৃষি প্রশিক্ষণ সেবা সরবরাহ করি যা আপনাকে কৃষিকাজ করতে সাহায্য
-            করতে সক্ষম করে।
-          </p>
+        <div className="rounded-lg bg-white p-4 shadow-lg">
+          <img
+            src="https://assets.telegraphindia.com/abp/2021/Apr/1618101082_goldsmith.jpg"
+            alt="Product 2"
+            className="mb-2 rounded-lg"
+            width="300"
+            height="200"
+          />
+          <h3 className="mb-2 text-lg font-semibold">স্বর্ণের কারিগর</h3>
+          <p> সোনার গহনা তৈরি।</p>
+          <a href="#" className="text-blue-500 hover:underline">
+            বিস্তারিত দেখুন
+          </a>
+        </div>
+
+        <div className="rounded-lg bg-white p-4 shadow-lg">
+          <img
+            src="https://images.prothomalo.com/prothomalo%2Fimport%2Fmedia%2F2017%2F08%2F27%2Fb81a672c718fd8e53820b00e8157aef7-59a1d94c78ef3.jpg?auto=format%2Ccompress&w=1200"
+            alt="Product 2"
+            className="mb-2 rounded-lg"
+            width="300"
+            height="200"
+          />
+          <h3 className="mb-2 text-lg font-semibold">কামার শিল্প</h3>
+          <p>দা, কাঁচি, হাতুড়ি বানানো।</p>
+          <a href="#" className="text-blue-500 hover:underline">
+            বিস্তারিত দেখুন
+          </a>
         </div>
       </div>
     </div>
   );
 };
 
-export default Service;
+export default Kutir;

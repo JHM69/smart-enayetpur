@@ -5,9 +5,6 @@ import { WiDayCloudy } from 'react-icons/wi'; // Replace this with the appropria
 import { useAQIAPIs } from './useAQIAPI';
 
 const Environment = () => {
-  const TOKEN = '2d71850fc24edb7443b5922b70f3587eabb14119';
-  const FEED_AQI_BASE_URL = 'https://api.waqi.info/feed/@';
-
   function convertToBengaliNumber(number) {
     const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
     const numberString = String(number);
@@ -69,6 +66,22 @@ const Environment = () => {
     p: 'বায়ু চাপ',
   };
 
+  function getColorClass(value) {
+    if (value >= 0 && value <= 50) {
+      return 'bg-green-600 text-white';
+    } else if (value >= 51 && value <= 100) {
+      return 'bg-orange-400 text-white';
+    } else if (value >= 101 && value <= 150) {
+      return 'bg-yellow-700 text-white';
+    } else if (value >= 151 && value <= 200) {
+      return 'bg-red-400 text-white';
+    } else if (value >= 201 && value <= 300) {
+      return 'bg-red-600 text-white';
+    } else {
+      return 'bg-red-900 text-white';
+    }
+  }
+
   const getSpectrum = (iaqi) => {
     let ret = [];
     Object.entries(iaqi).map(function (item) {
@@ -97,57 +110,32 @@ const Environment = () => {
                   <b>{names[weatherData.dominentpol]}</b>
                 </span>
                 <hr />
-                <ul>
-                  {getSpectrum(weatherData?.iaqi).map((spectrum, i) => (
-                    <li
-                      className="item-center flex flex-row justify-center"
-                      key={i}
-                    >
-                      <span
-                        className={`${
-                          [
-                            'particulate matter 2.5(pm 2.5)',
-                            'particulate matter 10(pm 10)',
-                            'ওজন',
-                            'নাইট্রোজেন ডাই অক্সাইড',
-                            'সালফার ডাই অক্সাইড',
-                            'কার্বন মনো অক্সাইড',
-                          ].indexOf(spectrum.key) >= 0
-                            ? spectrum?.value >= 0 && spectrum?.value <= 50
-                              ? 'bg-green-600 text-white'
-                              : spectrum?.value >= 51 && spectrum?.value <= 100
-                              ? 'bg-orange-400 text-white'
-                              : spectrum?.value >= 101 && spectrum?.value <= 150
-                              ? 'bg-yellow-700 text-white'
-                              : spectrum?.value >= 151 && spectrum?.value <= 200
-                              ? 'bg-red-400 text-white'
-                              : spectrum?.value >= 201 && spectrum?.value <= 300
-                              ? 'bg-red-600 text-white'
-                              : 'bg-red-900 text-white'
-                            : ''
-                        } inline-block h-6 w-6 rounded`}
-                      ></span>
-                      <span className="ml-5">{spectrum.key}</span>:
-                      <span>{spectrum.value}</span>
-                    </li>
-                  ))}
-                </ul>
+                <table className="mx-auto table-auto">
+                  <thead>
+                    <tr>
+                      <th className="px-4 py-2">Parameter</th>
+                      <th className="px-4 py-2">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {getSpectrum(weatherData?.iaqi).map((spectrum, i) => (
+                      <tr key={i}>
+                        <td className="border px-4 py-2">{spectrum.key}</td>
+                        <td
+                          className={`border px-4 py-2 ${getColorClass(
+                            spectrum.value,
+                          )}`}
+                        >
+                          {spectrum.value}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             ) : (
               <span>Loading...</span>
             )}
-
-            <div className="p-4">
-              <p className="mb-2 text-xl ">AQI স্কোর: 76</p>
-              <p className="mb-2 text-xl ">মানঃ খারাপ</p>
-
-              <p className="text-lg">
-                <strong>বিবরনঃ</strong> বায়ু দূষণের উচ্চ স্তরে পৌঁছেছে এবং
-                সংবেদনশীল গোষ্ঠীর জন্য অস্বাস্থ্যকর। আপনি যদি শ্বাস নিতে অসুবিধা
-                বা গলা জ্বালা করার মতো লক্ষণগুলি অনুভব করেন তবে বাইরে কাটানো
-                সময় কমিয়ে দিন।
-              </p>
-            </div>
           </div>
         </div>
       </section>
