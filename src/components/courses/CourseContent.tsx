@@ -1,0 +1,86 @@
+import { memo, useState } from 'react';
+import { BsDot } from 'react-icons/bs';
+import type { CourseType } from '~/types';
+
+import ChapterDisclosure from '../shared/ChapterDisclosure';
+import PreviewLectureModal from './PreviewLectureModal';
+
+interface CourseContentProps {
+  course?: CourseType;
+  totalVideoDuration: number;
+  totalLectures: number;
+}
+
+function CourseContent({
+  course,
+  totalLectures,
+  totalVideoDuration,
+}: CourseContentProps) {
+  const [expandAll, setExpandAll] = useState(false);
+
+  return (
+    <>
+      <PreviewLectureModal />
+
+      <section className="mx-auto w-full lg:w-[70%]">
+        <h1 className="text-2xl font-semibold md:text-3xl">Course content</h1>
+
+        <div className="my-4 flex flex-wrap justify-between space-y-2 md:flex-nowrap">
+          <div className="flex items-center space-x-4 text-xl md:text-2xl">
+            <h3>
+              <span className="font-semibold">{course?.chapters.length}</span>{' '}
+              Chapter
+            </h3>
+
+            <span className="absolute-center">
+              <BsDot />
+            </span>
+
+            <h3>
+              <span className="font-semibold">{totalLectures}</span> lesson
+            </h3>
+
+            <span className="absolute-center">
+              <BsDot />
+            </span>
+
+            <h3>
+              Time{' '}
+              <span className="font-semibold">
+                {Math.floor(totalVideoDuration / 3600)} Hour{' '}
+                {Math.ceil((totalVideoDuration % 3600) / 60)} Minute
+              </span>
+            </h3>
+          </div>
+
+          <button
+            onClick={() => {
+              setExpandAll((prevState) => !prevState);
+            }}
+            className="smooth-effect rounded-2xl py-4 text-yellow-500 hover:text-yellow-300"
+          >
+            {expandAll ? 'Zoom out all' : 'Expand all'}
+          </button>
+        </div>
+
+        <div className="flex flex-col space-y-4">
+          {course?.chapters &&
+            course.chapters.length > 0 &&
+            course.chapters.map((chapter) => {
+              return (
+                <ChapterDisclosure
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  // @ts-ignore
+                  key={chapter.id}
+                  expand={expandAll}
+                  chapter={chapter}
+                />
+              );
+            })}
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default memo(CourseContent);

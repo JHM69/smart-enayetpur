@@ -1,0 +1,51 @@
+{
+  "name": "স্মার্ট এনায়েতপুর",
+  "short_name": "স্মার্ট এনায়েতপুর",
+  "start_url": "/",
+  "display": "standalone",
+  "description": "স্মার্ট এনায়েতপুর",
+  "lang": "bn-BD",
+  "theme_color": "#794AB8",
+  "background_color": "#f8eff8",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "images/logo.svg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/logo.svg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/logo.svg",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo.svg",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/logo.svg",
+      "sizes": "1919x959",
+      "type": "image/png",
+      "description": "স্মার্ট এনায়েতপুর"
+    }
+  ],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "স্মার্ট এনায়েতপুর",
+      "url": "/",
+      "description": "স্মার্ট এনায়েতপুর"
+    }
+  ]
+}
